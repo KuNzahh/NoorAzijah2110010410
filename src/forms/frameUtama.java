@@ -15,6 +15,7 @@ public class frameUtama extends javax.swing.JFrame {
      */
     public frameUtama() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,21 +27,65 @@ public class frameUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        btnAnggota = new javax.swing.JButton();
+        btnPetugas = new javax.swing.JButton();
+        btnKetua = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Sistem Informasi Simpan Pinjam Koperasi");
+
+        btnAnggota.setText("Data Anggota");
+        btnAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnggotaActionPerformed(evt);
+            }
+        });
+
+        btnPetugas.setText("Data Petugas");
+
+        btnKetua.setText("Data Ketua");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(99, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnKetua)
+                        .addComponent(btnAnggota)
+                        .addComponent(btnPetugas))
+                    .addComponent(jLabel1))
+                .addGap(72, 72, 72))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAnggota, btnKetua, btnPetugas, jLabel1});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btnAnggota)
+                .addGap(32, 32, 32)
+                .addComponent(btnPetugas)
+                .addGap(34, 34, 34)
+                .addComponent(btnKetua)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnggotaActionPerformed
+        // TODO add your handling code here:
+        frameAnggota frmAggta = new frameAnggota();
+        frmAggta.setVisible(true);
+    }//GEN-LAST:event_btnAnggotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +123,9 @@ public class frameUtama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAnggota;
+    private javax.swing.JButton btnKetua;
+    private javax.swing.JButton btnPetugas;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

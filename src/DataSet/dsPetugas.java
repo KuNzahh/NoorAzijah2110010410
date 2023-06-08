@@ -9,8 +9,8 @@ import java.util.ArrayList;
  *
  * @author Acer
  */
-public class dsKetua {
-    private ArrayList<Integer> idketua;
+public class dsPetugas {
+    private ArrayList<Integer> idpetugas;
     private ArrayList<String> nama;
     private ArrayList<String> alamat;
     private ArrayList<String> jk;
@@ -20,8 +20,8 @@ public class dsKetua {
     private ArrayList<String> username;
     private ArrayList<String> password;
     
-    public dsKetua(){
-        idketua   = new ArrayList<Integer>();
+    public dsPetugas(){
+        idpetugas   = new ArrayList<Integer>();
         nama        = new ArrayList<String>();
         alamat      = new ArrayList<String>();
         jk          = new ArrayList<String>();
@@ -29,14 +29,14 @@ public class dsKetua {
         nohp     = new ArrayList<String>(); 
         email      = new ArrayList<String>(); 
         username      = new ArrayList<String>(); 
-        password     = new ArrayList<String>(); 
+        password     = new ArrayList<String>();
     }
     
-    public void isiid_ketua (int x){
-        idketua.add(x);
+    public void isiidPetugas (int x){
+        idpetugas.add(x);
      }
-    public ArrayList<Integer> getDatasetIdKetua(){
-         return this.idketua ;
+    public ArrayList<Integer> getDatasetIdPetugas(){
+         return this.idpetugas ;
      }
     
     public void isiNama(String value){
@@ -95,10 +95,10 @@ public class dsKetua {
          return this.password;
      }
      
-     public void tambahKetua(int idketua, String Nama, String Alamat, 
+     public void tambahKetua(int IdPetugas, String Nama, String Alamat, 
                                 String Jk, String Tgllahir, String Nohp, 
                                 String Email, String Username, String Password ){
-         this.idketua.add(idketua);
+         this.idpetugas.add(IdPetugas);
          this.nama.add(Nama);
          this.alamat.add(Alamat);
          this.jk.add(Jk);
@@ -109,4 +109,5 @@ public class dsKetua {
          this.password.add(Password);
          
      }
+    
 }
