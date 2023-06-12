@@ -31,11 +31,17 @@ public class frameUtama extends javax.swing.JFrame {
         btnAnggota = new javax.swing.JButton();
         btnPetugas = new javax.swing.JButton();
         btnKetua = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        btnAngsuran = new javax.swing.JButton();
+        btnPinjaman = new javax.swing.JButton();
+        btnSimpanan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Sistem Informasi Simpan Pinjam Koperasi");
 
+        btnAnggota.setForeground(new java.awt.Color(0, 0, 153));
         btnAnggota.setText("Data Anggota");
         btnAnggota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,23 +49,73 @@ public class frameUtama extends javax.swing.JFrame {
             }
         });
 
+        btnPetugas.setForeground(new java.awt.Color(0, 0, 153));
         btnPetugas.setText("Data Petugas");
+        btnPetugas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPetugasActionPerformed(evt);
+            }
+        });
 
+        btnKetua.setForeground(new java.awt.Color(0, 0, 204));
         btnKetua.setText("Data Ketua");
+        btnKetua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKetuaActionPerformed(evt);
+            }
+        });
+
+        jButton1.setForeground(new java.awt.Color(0, 0, 153));
+        jButton1.setText("Ajuan Pinjaman");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        btnAngsuran.setText("Angsuran");
+        btnAngsuran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAngsuranActionPerformed(evt);
+            }
+        });
+
+        btnPinjaman.setText("Pinjaman");
+        btnPinjaman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPinjamanActionPerformed(evt);
+            }
+        });
+
+        btnSimpanan.setText("Simpanan");
+        btnSimpanan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimpananActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
+                .addContainerGap(44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnKetua)
-                        .addComponent(btnAnggota)
-                        .addComponent(btnPetugas))
-                    .addComponent(jLabel1))
-                .addGap(72, 72, 72))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnAngsuran)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPinjaman)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSimpanan)
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnAnggota)
+                            .addComponent(btnPetugas)
+                            .addComponent(btnKetua)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(40, 40, 40))))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAnggota, btnKetua, btnPetugas, jLabel1});
@@ -67,15 +123,22 @@ public class frameUtama extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(27, 27, 27)
                 .addComponent(btnAnggota)
-                .addGap(32, 32, 32)
+                .addGap(12, 12, 12)
                 .addComponent(btnPetugas)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnKetua)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAngsuran)
+                    .addComponent(btnSimpanan)
+                    .addComponent(btnPinjaman))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -86,6 +149,42 @@ public class frameUtama extends javax.swing.JFrame {
         frameAnggota frmAggta = new frameAnggota();
         frmAggta.setVisible(true);
     }//GEN-LAST:event_btnAnggotaActionPerformed
+
+    private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPetugasActionPerformed
+        // TODO add your handling code here:
+        framePetugas frmPtgs = new framePetugas();
+        frmPtgs.setVisible(true);
+    }//GEN-LAST:event_btnPetugasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        frameAjuanPinjaman frmAjPinj = new frameAjuanPinjaman();
+        frmAjPinj.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnPinjamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPinjamanActionPerformed
+        // TODO add your handling code here:
+        framePinjaman frmPnjmn = new framePinjaman();
+        frmPnjmn.setVisible(true);
+    }//GEN-LAST:event_btnPinjamanActionPerformed
+
+    private void btnKetuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKetuaActionPerformed
+        // TODO add your handling code here:
+        frameKetua frmKtua = new frameKetua();
+        frmKtua.setVisible(true);
+    }//GEN-LAST:event_btnKetuaActionPerformed
+
+    private void btnAngsuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngsuranActionPerformed
+        // TODO add your handling code here:
+        frameAngsuran frmAngsrn = new frameAngsuran();
+        frmAngsrn.setVisible(true);
+    }//GEN-LAST:event_btnAngsuranActionPerformed
+
+    private void btnSimpananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpananActionPerformed
+        // TODO add your handling code here:
+        frameSimpanan frmSimpnn = new frameSimpanan();
+        frmSimpnn.setVisible(true);
+    }//GEN-LAST:event_btnSimpananActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,8 +223,12 @@ public class frameUtama extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnggota;
+    private javax.swing.JButton btnAngsuran;
     private javax.swing.JButton btnKetua;
     private javax.swing.JButton btnPetugas;
+    private javax.swing.JButton btnPinjaman;
+    private javax.swing.JButton btnSimpanan;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

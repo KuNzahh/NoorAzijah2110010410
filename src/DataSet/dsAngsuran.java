@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class dsAngsuran {
     private ArrayList<Integer> idangsuran;
-    private ArrayList<String> angsuransi;
+    private ArrayList<String> angsuran;
     private ArrayList<String> tgl;
     private ArrayList<String> sisapinjaman;
     private ArrayList<String> jatuhtempo;
@@ -21,7 +21,7 @@ public class dsAngsuran {
     
     public dsAngsuran (){
         idangsuran    = new ArrayList<Integer>();
-        angsuransi    = new ArrayList<String>();
+        angsuran    = new ArrayList<String>();
         tgl           = new ArrayList<String>();
         sisapinjaman  = new ArrayList<String>();
         jatuhtempo    = new ArrayList<String>();
@@ -30,35 +30,35 @@ public class dsAngsuran {
         status_lunas  = new ArrayList<String>();
     }
     
-    public void isiid_Angsuran (int x){
+    public void isiIdangsuran (int x){
          idangsuran.add(x);
      }
     public ArrayList<Integer> getDatasetIdangsuran(){
          return this.idangsuran ;
      }
     
-    public void isiangsuransi(String value){
-         angsuransi.add(value);
+    public void isiAngsuran(String value){
+         angsuran.add(value);
      }
-     public ArrayList<String> getDatasetAngsuransi(){
-         return this.angsuransi;
+     public ArrayList<String> getDatasetAngsuran(){
+         return this.angsuran;
      }
      
-    public void isitgl(String value){
+    public void isiTgl(String value){
          tgl.add(value);
      }
      public ArrayList<String> getDatasetTgl(){
          return this.tgl;
      }
      
-     public void isisisapinjaman(String value){
+     public void isiSisapinjaman(String value){
          sisapinjaman.add(value);
      }
      public ArrayList<String> getDatasetSisapinjaman(){
          return this.sisapinjaman;
      }
      
-     public void isijatuhtempo(String value){
+     public void isiJatuhtempo(String value){
          jatuhtempo.add(value);
      }
      public ArrayList<String> getDatasetJatuhtempo(){
@@ -86,11 +86,11 @@ public class dsAngsuran {
          return this.status_lunas;
      }
      
-     public void tambahAngsuran(int idangsuran, String Angsuransi, String Tgl, 
+     public void tambahAngsuran(int idangsuran, String Angsuran, String Tgl, 
                                 String SisaPinjm, String JthTmpo, String Totpinjm, 
                                 String SttsTnggu, String Sttslns){
          this.idangsuran.add(idangsuran);
-         this.angsuransi.add(Angsuransi);
+         this.angsuran.add(Angsuran);
          this.sisapinjaman.add(SisaPinjm);
          this.jatuhtempo.add(JthTmpo);
          this.Totalpinjaman.add(Totpinjm);

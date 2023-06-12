@@ -3,18 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package forms;
-
+import DataSet.dsAnggota;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Acer
  */
 public class frameAnggota extends javax.swing.JFrame {
-
+    dsAnggota datsetAnggota;
     /**
      * Creates new form frameAnggota
      */
     public frameAnggota() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        datsetAnggota = new dsAnggota();
     }
 
     /**
@@ -38,16 +41,17 @@ public class frameAnggota extends javax.swing.JFrame {
         txtNama = new javax.swing.JTextField();
         txtAlamat = new javax.swing.JTextField();
         cmbJk = new javax.swing.JComboBox<>();
-        tdtNohp = new javax.swing.JTextField();
+        txtNohp = new javax.swing.JTextField();
         txtTglmasuk = new javax.swing.JTextField();
         btnTmbhAnggta = new javax.swing.JButton();
         btnTmplDatAnggt = new javax.swing.JButton();
         cmbJabatan = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbStatus = new javax.swing.JComboBox<>();
         txtIdAnggota = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel1.setText("Tambah Data Anggota Koperasi");
 
         jLabel2.setText("Id");
@@ -68,13 +72,29 @@ public class frameAnggota extends javax.swing.JFrame {
 
         cmbJk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Laki-laki", "Perempuan" }));
 
+        txtNohp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNohpActionPerformed(evt);
+            }
+        });
+
         btnTmbhAnggta.setText("Tambah Anggota");
+        btnTmbhAnggta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTmbhAnggtaActionPerformed(evt);
+            }
+        });
 
         btnTmplDatAnggt.setText("Tampil Data");
+        btnTmplDatAnggt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTmplDatAnggtActionPerformed(evt);
+            }
+        });
 
         cmbJabatan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Manager", "Staf Admin", "Petugas Keanggotaan", "Staf keuangan", "Analis Data", " " }));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Tetap", "Tidak tetap", " " }));
+        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Tetap", "Tidak tetap", " " }));
 
         txtIdAnggota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,53 +107,50 @@ public class frameAnggota extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                        .addComponent(jLabel2)
+                        .addGap(73, 73, 73)
+                        .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
                         .addComponent(btnTmbhAnggta)
                         .addGap(18, 18, 18)
                         .addComponent(btnTmplDatAnggt))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(157, 157, 157)
-                                        .addComponent(jLabel1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(73, 73, 73)
-                                        .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tdtNohp)
-                                    .addComponent(cmbJk, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtAlamat)
-                                    .addComponent(txtTglmasuk)
-                                    .addComponent(cmbJabatan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNohp)
+                            .addComponent(cmbJk, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtAlamat)
+                            .addComponent(txtTglmasuk)
+                            .addComponent(cmbJabatan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(72, 72, 72))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cmbJabatan, cmbJk, jComboBox1, tdtNohp, txtAlamat, txtNama, txtTglmasuk});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cmbJabatan, cmbJk, cmbStatus, txtAlamat, txtNama, txtNohp, txtTglmasuk});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(txtIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -152,7 +169,7 @@ public class frameAnggota extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(tdtNohp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNohp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
@@ -163,9 +180,9 @@ public class frameAnggota extends javax.swing.JFrame {
                     .addComponent(cmbJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTmbhAnggta)
                     .addComponent(btnTmplDatAnggt))
@@ -178,6 +195,38 @@ public class frameAnggota extends javax.swing.JFrame {
     private void txtIdAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdAnggotaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdAnggotaActionPerformed
+
+    private void btnTmbhAnggtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTmbhAnggtaActionPerformed
+        // TODO add your handling code here:
+        datsetAnggota.isiidanggota(Integer.valueOf(txtIdAnggota.getText()));
+        datsetAnggota.isinama(txtNama.getText());
+        datsetAnggota.isialamat(txtAlamat.getText());
+        datsetAnggota.isijk(cmbJk.getSelectedItem().toString());
+        datsetAnggota.isinohp(txtNohp.getText());
+        datsetAnggota.isitglmasuk(txtTglmasuk.getText());
+        datsetAnggota.isijabatan(cmbJabatan.getSelectedItem().toString());
+        datsetAnggota.isistatus(cmbStatus.getSelectedItem().toString());
+        
+         String pesan = "Data Berhasil Disimpan ke Array";
+        JOptionPane.showMessageDialog(this, pesan);
+    }//GEN-LAST:event_btnTmbhAnggtaActionPerformed
+
+    private void txtNohpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNohpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNohpActionPerformed
+
+    private void btnTmplDatAnggtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTmplDatAnggtActionPerformed
+        // TODO add your handling code here:
+        String isipesan = "Id Anggota : " + datsetAnggota.getDatasetIdanggota().get(0)+
+                          "\nNama : " + datsetAnggota.getDatasetnama().get(0) +
+                          "\nAlamat : " + datsetAnggota.getDatasetalamat().get(0) +
+                          "\nJenis Kelamin : " + datsetAnggota.getDatasetjnsklmin().get(0) +
+                          "\nNo Hp : " + datsetAnggota.getDatasetnohp().get(0) +
+                          "\nTgl Masuk : " + datsetAnggota.getDatasettglmasuk().get(0) +
+                          "\nJabatan : " + datsetAnggota.getDatasetjabatan().get(0) +
+                          "\nStatus : " + datsetAnggota.getDatasetstatus().get(0);
+    JOptionPane.showMessageDialog(this, isipesan);
+    }//GEN-LAST:event_btnTmplDatAnggtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,7 +268,7 @@ public class frameAnggota extends javax.swing.JFrame {
     private javax.swing.JButton btnTmplDatAnggt;
     private javax.swing.JComboBox<String> cmbJabatan;
     private javax.swing.JComboBox<String> cmbJk;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cmbStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -229,10 +278,10 @@ public class frameAnggota extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField tdtNohp;
     private javax.swing.JTextField txtAlamat;
     private javax.swing.JTextField txtIdAnggota;
     private javax.swing.JTextField txtNama;
+    private javax.swing.JTextField txtNohp;
     private javax.swing.JTextField txtTglmasuk;
     // End of variables declaration//GEN-END:variables
 }

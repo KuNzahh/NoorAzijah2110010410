@@ -32,7 +32,7 @@ public class dsKetua {
         password     = new ArrayList<String>(); 
     }
     
-    public void isiid_ketua (int x){
+    public void isiIdKetua (int x){
         idketua.add(x);
      }
     public ArrayList<Integer> getDatasetIdKetua(){
