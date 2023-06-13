@@ -10,10 +10,10 @@ package noorazijah2110010410;
  */
 public class ajuanpinjaman {
     private int idajuanpinjaman;
-    private String jml_pinjaman;
-    private String bunga;
+    private int jml_pinjaman;
+    private int bunga;
     private String waktu;
-    private String totalpinjaman;
+    private int totalpinjaman;
     
     public ajuanpinjaman(){
     }
@@ -25,17 +25,25 @@ public class ajuanpinjaman {
         return this.idajuanpinjaman;
     }
     
-    public void setjml_pinjaman(String jml_pinjaman){
+    public void setjml_pinjaman(int jml_pinjaman){
         this.jml_pinjaman=jml_pinjaman;
     }
-    public String getjml_pinjaman(){
+    public int getjml_pinjaman(){
         return this.jml_pinjaman;
     }
     
-    public void setbunga(String bunga){
-        this.bunga=bunga;
+    public void setbunga(int bunga){
+        if (jml_pinjaman>= 5000000){
+            this.bunga=25/100;
+        }else if (jml_pinjaman>= 10000000){
+        //4..6 :800000
+            this.bunga=30/100;
+        }else {
+        //7..n :1000000
+            this.bunga=50/100;
+       }
     }
-    public String getbunga(){
+    public int getbunga(){
         return this.bunga;
     }
     
@@ -46,10 +54,10 @@ public class ajuanpinjaman {
         return this.waktu;
     }
     
-    public void settotalpinjaman(String totalpinjaman){
+    public void settotalpinjaman(int totalpinjaman){
         this.totalpinjaman=totalpinjaman;
     }
-    public String gettotalpinjaman(){
+    public int gettotalpinjaman(){
         return this.totalpinjaman;
     }
     

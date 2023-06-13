@@ -158,10 +158,10 @@ public class frameAjuanPinjaman extends javax.swing.JFrame {
     private void btnTmbhAjuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTmbhAjuanActionPerformed
         // TODO add your handling code here:
         datsetAjpinj.isiid_ajuanpinj(Integer.valueOf(txtIdAjPinj.getText()));
-        datsetAjpinj.isijum_pinj(txtJumPinj.getText());
-        datsetAjpinj.isibunga(txtBunga.getText());
+        datsetAjpinj.isijum_pinj(Integer.valueOf(txtJumPinj.getText()));
+        datsetAjpinj.isibunga(Integer.valueOf(txtBunga.getText()));
         datsetAjpinj.isiwaktu(cmbWaktu.getSelectedItem().toString());
-        datsetAjpinj.isitotalpinjaman(txtJumPinj.getText());
+        datsetAjpinj.isitotalpinjaman(Integer.valueOf(txtTotPinj.getText()));
         
         String pesan = "Data Berhasil Disimpan ke Array";
         JOptionPane.showMessageDialog(this, pesan);

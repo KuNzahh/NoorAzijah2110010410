@@ -11,18 +11,18 @@ import java.util.ArrayList;
  */
 public class dsAjuanpinjaman {
     private ArrayList<Integer> idajuanpinjaman;
-    private ArrayList<String> jml_pinjaman;
-    private ArrayList<String> bunga;
+    private ArrayList<Integer> jml_pinjaman;
+    private ArrayList<Integer> bunga;
     private ArrayList<String> waktu;
-    private ArrayList<String> totalpinjaman;
+    private ArrayList<Integer> totalpinjaman;
     
        
     public dsAjuanpinjaman (){
         idajuanpinjaman = new ArrayList<Integer>();
-        jml_pinjaman    = new ArrayList<String>();
-        bunga           = new ArrayList<String>();
+        jml_pinjaman    = new ArrayList<Integer>();
+        bunga           = new ArrayList<Integer>();
         waktu           = new ArrayList<String>();
-        totalpinjaman   = new ArrayList<String>();      
+        totalpinjaman   = new ArrayList<Integer>();      
     }
     
     public void isiid_ajuanpinj (int x){
@@ -32,17 +32,17 @@ public class dsAjuanpinjaman {
          return this.idajuanpinjaman ;
      }
      
-    public void isijum_pinj(String value){
-         jml_pinjaman.add(value);
+    public void isijum_pinj(int x){
+         jml_pinjaman.add(x);
      }
-     public ArrayList<String> getDatasetJum_pinj(){
+     public ArrayList<Integer> getDatasetJum_pinj(){
          return this.jml_pinjaman;
      }
      
-    public void isibunga(String value){
-         bunga.add(value);
+    public void isibunga(int x){
+         bunga.add(x);
      }
-    public ArrayList<String> getDatasetBunga(){
+    public ArrayList<Integer> getDatasetBunga(){
          return this.bunga;
      }
      
@@ -53,14 +53,14 @@ public class dsAjuanpinjaman {
          return this.waktu;
      }
      
-    public void isitotalpinjaman(String value){
-         totalpinjaman.add(value);
+    public void isitotalpinjaman(int x){
+         totalpinjaman.add(x);
      }
-     public ArrayList<String> getDatasetTotPinj(){
+     public ArrayList<Integer> getDatasetTotPinj(){
          return this.totalpinjaman;
      }
      
-    public void tambahAjuan(int idajuanpinjaman, String jml_pinjaman, String Bunga, String Waktu, String Totalpinjaman){
+    public void tambahAjuan(int idajuanpinjaman, int jml_pinjaman, int Bunga, String Waktu, int Totalpinjaman){
          this.idajuanpinjaman.add(idajuanpinjaman);
          this.jml_pinjaman.add(jml_pinjaman);
          this.bunga.add(Bunga);
